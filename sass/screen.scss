@@ -1,0 +1,289 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "_variables";
+
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+	font-family: "rooney-web", serif;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	color: #444;
+}
+
+a {
+	color: #444;
+}
+
+h1 {
+	font-size: $h1-font-size;
+	line-height: $h1-line-height;
+	margin-bottom: $h1-margin-bottom;
+}
+
+h2 {
+	font-size: $h2-font-size;
+	line-height: $h2-line-height;
+	margin-bottom: $h2-margin-bottom;
+}
+
+h1, h2 {
+	font-family: "azo-sans-uber", sans-serif;
+}
+
+p {
+	margin-bottom: 50px;
+}
+
+.button {
+	font-family: "ratio", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	padding: 10px 20px;
+	@include border-radius(3px);
+	background: #2CA7C8;
+	color: #fff;
+	text-decoration: none;
+	transition: background 0.5s ease;
+	&:hover {
+		background: #2389A5;
+
+	}
+}
+
+section {
+	padding: 100px 20px;
+	width: 100%;
+}
+
+.content {
+	max-width: 960px;
+	margin: auto;
+}
+
+section#intro {
+	.content {
+		max-width: 750px;
+	}
+
+	h1 {
+		color: #9FC03A;
+		strong {
+			color: #6DB52C;
+		}
+	}
+	a {
+		text-align: center;
+	}
+}
+
+.question, .answer {
+	width: 50%;
+}
+
+.question {
+	float: left;
+}
+
+.answer {
+	float: left;
+	width: 49%;
+	padding-left: 60px;
+}
+
+section#expectations {
+	background: #f7f7f7;
+	overflow: hidden;
+	h2 {
+		color: #ee66aa;
+		strong {
+			color: #e8308c;
+		}
+	}
+
+	p {
+		margin-bottom: 30px;
+	}
+
+	.answer {
+		border-left: 4px solid rgba(238,102,170,0.2);
+	}
+
+	ul {
+		font-family: "ratio", sans-serif;
+		font-weight: 500;
+		color: #516CB3;
+	}
+}
+
+section#origin {
+	overflow: hidden;
+	h2 {
+		color: #2980b9;
+		text-align: center;
+		strong {
+			color: #34495e;
+		}
+	}
+	.answer {
+		border-left: 4px solid rgba(255,126,0,0.2);
+	}
+
+	#causes {
+		margin: 40px auto 0 auto;
+		max-width:700px;
+		text-align: center;
+		.circle {
+			@include border-radius(200px);
+			display: inline-block;
+			float: left;
+			border: 1px solid rgb(107,174,214);
+			margin: 3px;
+			&.large {
+				margin: 6px;
+			}
+		}
+	}
+
+	.cause {
+		@include border-radius(200px);
+		border: 4px solid #fff;
+		display: inline;
+		color: #fff;
+		font-weight: 300;
+		font-size: 19px;
+		line-height: 23px;
+		text-align: center;
+		float: left;
+		position: relative;
+		p {
+			position: absolute;
+			margin-bottom: 0;
+			padding: 0 20px;
+		}
+
+		&.first {
+			background: rgb(107,174,214);
+			width: 250px;
+			height: 250px;
+			p {
+				top: 33%;
+			}
+		}
+		&.second {
+			background: rgb(33,113,181);
+			width: 220px;
+			height: 220px;
+			p {
+				top: 39%;
+			}
+		}
+		&.third {
+			background: #2464A5;
+			width: 150px;
+			height: 150px;
+			p {
+				top: 27%;
+			}
+		}
+		&.fourth {
+			background: rgb(66,146,198);
+			width: 240px;
+			height: 240px;
+			p {
+				top: 39%;
+			}
+		}
+		&.fifth {
+			background: #23487D;
+			width: 142px;
+			height: 142px;
+			p {
+				top: 35%;
+			}
+		}
+	}
+}
+
+section#dream {
+	overflow: hidden;
+	background: #f7f7f7;
+	.question {
+		padding-right: 50px;
+		border-right: 4px solid rgba(110,45,138,0.2);
+	}
+	h2 {
+		color: #9b59b6;
+		strong {
+			color: #6E2D8A;
+		}
+	}
+	p strong {
+		font-weight: 500;
+		color: #8e44ad;
+		&.first {
+			color: #6DB52C;
+		}
+
+		&.second {
+			color: #2980b9;
+		}
+
+		&.third {
+			color: #e8308c;
+		}
+	}
+}
+
+
+@media screen and (max-width: 970px) {
+	.content {
+		max-width: 750px;
+	}
+
+	.question,.answer {
+		padding: 0;
+		float: none;
+		width: 100%;
+		max-width: 700px;
+	}
+
+	section#expectations .answer {
+		border-left: none;
+		padding: 0;
+	}
+
+	section#dream .question {
+		border-right: none;
+		padding: 0;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 1.15rem;
+		line-height: 1.75rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		line-height: 3.25rem;
+	}
+
+	h2 {
+		font-size: 2.25rem;
+		line-height: 2.75rem;
+	}
+}
