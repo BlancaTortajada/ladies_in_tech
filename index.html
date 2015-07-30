@@ -3,10 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>Application for Ladies in Tech</title>
+        <title>Blanca Tortajada - Application for Ladies in Tech</title>
         <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
         <script src="//use.typekit.net/yil3yfi.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     </head>
     <body>
         <section id="intro">
@@ -51,6 +52,20 @@
                 </div>
             </div>
         </section>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('a[href^="#"]').on('click',function (e) {
+                    e.preventDefault();
+
+                    var target = this.hash;
+                    var $target = $(target);
+
+                    $('html, body').stop().animate({
+                         'scrollTop': $target.offset().top
+                    }, 500, 'swing');
+                });
+            });
+        </script>
     </body>
 </html>
 
